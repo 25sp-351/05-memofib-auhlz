@@ -16,7 +16,7 @@ long fibonacci(int of_num) {
 }
 
 // Memoization setup
-#define MAX_MEMOIZED 100
+#define MAX_MEMOIZED 1000
 #define ARRAY_SIZE (MAX_MEMOIZED + 1)
 #define NO_VALUE_YET -1
 
