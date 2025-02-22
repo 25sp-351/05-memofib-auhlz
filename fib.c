@@ -1,12 +1,12 @@
 #include "fib.h"
 #include <stdio.h>
 
-typedef long (*long_func_ptr)(int param);
+typedef unsigned long long (*long_func_ptr)(int param);
 
 long_func_ptr fibonacci_provider;
 
 // Fibonacci function with recursion
-long fibonacci(int of_num) {
+unsigned long long fibonacci(int of_num) {
   printf(__FILE__ ":%2d   fibonacci(%d) called\n", __LINE__, of_num);
 
   if (of_num < 2)
@@ -16,15 +16,15 @@ long fibonacci(int of_num) {
 }
 
 // Memoization setup
-#define MAX_MEMOIZED 1000
+#define MAX_MEMOIZED 91
 #define ARRAY_SIZE (MAX_MEMOIZED + 1)
 #define NO_VALUE_YET -1
 
 long_func_ptr _original_provider;
-long _memoization_data[ARRAY_SIZE];
+unsigned long long _memoization_data[ARRAY_SIZE];
 
 // Caching function
-long cache_func(int of_num) {
+unsigned long long cache_func(int of_num) {
   printf(__FILE__ ":%2d   cache_func(%d) called\n", __LINE__, of_num);
 
   if (of_num > MAX_MEMOIZED)

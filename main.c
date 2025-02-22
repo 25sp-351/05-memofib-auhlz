@@ -10,12 +10,14 @@ int main(int argc, char *argv[]) {
   fibonacci_provider = init_cache(fibonacci);
 
   // Compute and print Fibonacci values
-  for (int ix = 0; ix <= 10; ix++) {
-    printf(__FILE__ ":%2d   fibonacci(%d) = %ld\n", __LINE__, ix,
-           (*fibonacci_provider)(ix));
-  }
-  for (int ix=0; ix < 10; ix++) {
-    printf(__FILE__ ":%2d   fibonacci of %d is %ld\n",__LINE__,
+  
+  //for (int ix = 0; ix <= 100; ix++) {
+  //  printf(__FILE__ ":%2d   fibonacci(%d) = %lld\n", __LINE__, ix,
+  //         (*fibonacci_provider)(ix));
+  //}
+
+  for (int ix=0; ix <= 91; ix++) {
+    printf(__FILE__ ":%2d   fibonacci of %d is %lld\n",__LINE__,
         ix,
         (*fibonacci_provider)(ix)
     );
